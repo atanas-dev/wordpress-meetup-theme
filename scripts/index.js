@@ -1,3 +1,4 @@
+import 'regenerator-runtime';
 import TextScramble from './text-scramble';
 
 const scramble = async (nodes) => {
