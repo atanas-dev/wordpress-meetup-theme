@@ -1,5 +1,6 @@
 import 'regenerator-runtime';
 import TextScramble from './text-scramble';
+import '../styles/index.scss';
 
 const scramble = async (nodes) => {
   for (let i = 0; i < nodes.length; i++) {

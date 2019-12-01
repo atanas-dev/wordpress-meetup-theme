@@ -1,5 +1,6 @@
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -19,6 +20,17 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.s?css$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'sass-loader',
+        ],
       }
     ]
   },
@@ -27,6 +39,9 @@ module.exports = {
       host: 'localhost',
       port: 3000,
       proxy: 'http://wpmeetup.local/'
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'bundle.css',
     }),
   ],
 };
