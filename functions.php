@@ -18,7 +18,7 @@ function blankslate_load_scripts() {
 	wp_enqueue_style( 'blankslate-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'jquery' );
 
-	wp_enqueue_script( 'my-theme-scripts', get_template_directory_uri() . '/dist/bundle.js' );
+	wp_enqueue_script( 'my-theme-scripts', get_template_directory_uri() . '/dist/bundle.js', array(), null, true );
 }
 
 add_action( 'wp_footer', 'blankslate_footer_scripts' );
